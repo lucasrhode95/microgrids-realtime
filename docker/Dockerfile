@@ -14,4 +14,6 @@ RUN ${MODBUS_SCRIPTS_PATH}/install_socat.sh
 COPY ./install_diagslave.sh ${MODBUS_SCRIPTS_PATH}/install_diagslave.sh
 RUN ${MODBUS_SCRIPTS_PATH}/install_diagslave.sh
 
-ENTRYPOINT ${MODBUS_SCRIPTS_PATH}/start_modbus_server.sh
+EXPOSE 502
+COPY start_diagslave.sh ${MODBUS_SCRIPTS_PATH}/start_diagslave.sh
+ENTRYPOINT ${MODBUS_SCRIPTS_PATH}/start_diagslave.sh

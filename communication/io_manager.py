@@ -34,7 +34,7 @@ class IOManager:
         self.addresses = {}
         self.io_driver = io_driver
         self.unit_id = unit_id
-        self.io_driver.connect()
+        io_driver.connect()
 
         self.byte_order = byte_order
         self.word_order = word_order

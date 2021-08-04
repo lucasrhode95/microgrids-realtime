@@ -21,6 +21,7 @@ class BaseManager:
             await self._run()
         except:
             self.stop()
+            raise
 
     def simulate(self):
         asyncio.run(self.simulate_async())
