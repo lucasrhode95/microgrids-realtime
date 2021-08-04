@@ -1,0 +1,16 @@
+version: "3"
+services:
+  modbus_server:
+    container_name: modbus_server
+    build:
+      # TCP = 127.0.0.1:502 | unit ID = 1
+      # RTU = /serial0 | 19200 | 8 | 1 | even
+      context: .
+    ports:
+      - 502:502
+    environment:
+      - TZ=America/Sao_Paulo
+    volumes:
+      - ./:/modbus_scripts
+#    devices:  # comment this if your machine doesn't have a serial port
+#      - <HOST SERIAL PORT>:/dev/serial0
